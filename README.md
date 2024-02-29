@@ -46,4 +46,5 @@ L'application a été testée sur Google Chrome en mode téléphone avec utilisa
 Identifiants de connexion :
 
 Login: test@gmail.com
+
 Mot de passe: testtest
