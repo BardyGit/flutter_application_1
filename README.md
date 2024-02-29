@@ -41,7 +41,8 @@ Fonctionnalités supplémentaires (US 7)- ✅
 - Système de favoris sur la page Activités avec ajout et filtrage.
   
 ## Test
-L'application a été testée sur Google Chrome en mode téléphone avec utilisation de Firebase.
+L'application a été testée sur Google Chrome (taille téléphone idéalement).
+La base de données firebase a été utiliser tout au long du projet.
 
 Identifiants de connexion :
 
