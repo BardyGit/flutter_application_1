@@ -94,7 +94,7 @@ class _ActivityDetailPageState extends State<ActivityDetailPage> {
 
   Future<void> addToCart(Activity activity) async {
     try {
-      // Ajouter l'activité au panier dans Firestore
+      // Ajout de l'activité au panier dans Firestore
       await FirebaseFirestore.instance.collection('panier').add({
         'title': activity.title,
         'location': activity.location,

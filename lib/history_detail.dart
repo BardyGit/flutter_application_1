@@ -129,21 +129,15 @@ class HistoryDetailPage extends StatelessWidget {
   }
 
   void annulerCommande(BuildContext context, Commande commande) async {
-    // Ajoutez ici la logique pour annuler la commande
-    // Supprimez la commande de la base de données ou effectuez d'autres opérations nécessaires
-
-    // Supprimer la commande de la base de données
     CollectionReference commandesCollection = FirebaseFirestore.instance.collection('commandes');
     QuerySnapshot<Map<String, dynamic>> querySnapshot = await commandesCollection
         .where('date', isEqualTo: commande.date)
         .get() as QuerySnapshot<Map<String, dynamic>>;
 
     if (querySnapshot.docs.isNotEmpty) {
-      // Supprimez le document de la commande
+      // Supprime le document de la commande
       await commandesCollection.doc(querySnapshot.docs.first.id).delete();
     }
-
-    // Affichez un SnackBar pour indiquer que la commande a été annulée
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text('Commande annulée avec succès !'),
@@ -151,8 +145,6 @@ class HistoryDetailPage extends StatelessWidget {
         backgroundColor: Colors.green,
       ),
     );
-
-    // Une fois la commande annulée, retournez à la page des commandes
     Navigator.pushReplacement(
       context,
       MaterialPageRoute(builder: (context) => HistoryPage()),

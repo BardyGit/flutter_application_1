@@ -295,10 +295,10 @@ Future<List<Activity>> getActivitiesFromDatabase() async {
     FavoritesProvider favoritesProvider = Provider.of<FavoritesProvider>(context, listen: false);
     
     if (selectedCategory == 'Favoris') {
-      // Si l'onglet "Favoris" est sélectionné, retournez uniquement les activités marquées comme favoris
+      // Si l'onglet "Favoris" est sélectionné, retourne uniquement les activités marquées comme favoris
       activities = activities.where((activity) => favoritesProvider.favorites.contains(activity.id)).toList();
     } else if (selectedCategory != 'Tous') {
-      // Filtrer les activités par la catégorie sélectionnée
+      // Filtre les activités par la catégorie sélectionnée
       activities = activities.where((activity) => activity.categorie == selectedCategory).toList();
     }
 
@@ -332,8 +332,6 @@ class AddToFavoritesButton extends StatelessWidget {
               favoritesProvider.favorites.contains(activity.id)
                   ? 'Activité ajoutée aux favoris !'
                   : 'Activité retirée des favoris !',
-                  // acutalise si on est dans l'onglet favoris
-                  
             ),
             duration: Duration(seconds: 2),
             backgroundColor: Colors.green,

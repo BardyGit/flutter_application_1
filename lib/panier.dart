@@ -233,12 +233,9 @@ class _PanierListState extends State<PanierList> {
         // Supprimez le document du panier
         await panierCollection.doc(querySnapshot.docs.first.id).delete();
       }
-
-      // Utilisez setState pour mettre à jour l'état
       setState(() {
         removeMessage = 'Activité retirée du panier avec succès!';
       });
-
       // Affichez le message de suppression avec un SnackBar
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
@@ -308,8 +305,6 @@ class _PanierListState extends State<PanierList> {
         doc.reference.delete();
       });
     });
-
-    // Utilisez setState pour mettre à jour l'état
       setState(() {
         commandeMessage = 'Commande effectuée avec succès !';
       });
